@@ -15,7 +15,10 @@ function App() {
         <Sidebar />
       </div>
       <div className="cvDisplay">
-        <CVDisplay educations={initialData.sections.educations} />
+        <CVDisplay
+          educations={initialData.sections.educations}
+          personalInfo={initialData.personalInfo}
+        />
 
       </div>
     </div>
