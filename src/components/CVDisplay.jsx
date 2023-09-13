@@ -1,8 +1,11 @@
 import React from 'react';
 import '../styles/cvdisplay.css';
+import EducationSection from './EducationSection';
 
-function CVDisplay() {
+function CVDisplay({ educations }) {
     return (
+
+
         <div className="cv">
             <div className="cv-header">
                 <div>
@@ -16,7 +19,7 @@ function CVDisplay() {
             <div className="cv-body">
                 <div className="cv-education">
                     <h2>Education</h2>
-                    <p>College XYZ</p>
+                    <EducationSection educations={educations} />
                 </div>
                 <div className="cv-experience">
                     <h2>Experience</h2>

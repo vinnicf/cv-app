@@ -7,15 +7,6 @@
 
 .app {
   display: flex;
-}
+  gap: 30px;
 
-.sidebar {
-  width: 30%;
-  border-right: 1px solid #ccc;
-  padding: 20px;
-}
-
-.cvDisplay {
-  width: 70%;
-  padding: 20px;
 }

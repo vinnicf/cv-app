@@ -1,0 +1,21 @@
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 15px;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    /* Space between cards */
+}
+
+.form-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    /* Rounded corners */
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
