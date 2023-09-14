@@ -1,34 +1,18 @@
 import React from 'react';
 import '../styles/sidebar.css'
+import { PersonalInfoForm } from './PersonalInfoForm';
 
 
-const Sidebar = () => {
+const Sidebar = ({ personalInfo, setPersonalInfo }) => {
 
     return (
         <div className='sidebar'>
             <h2>Edit Your CV</h2>
             <div className="form-container">
-                <div className="form-card">
-                    <h3>Personal Info</h3>
-                    <form className="personal-info-form">
-                        <div className="input-group">
-                            <label htmlFor="">Full Name</label>
-                            <input type="text" />
-                        </div>
-                        <div className="input-group">
-                            <label htmlFor="">Email</label>
-                            <input type="text" />
-                        </div>
-                        <div className="input-group">
-                            <label htmlFor="">Phone Number</label>
-                            <input type="text" />
-                        </div>
-                        <div className="input-group">
-                            <label htmlFor="">Adress</label>
-                            <input type="text" />
-                        </div>
-                    </form>
-                </div>
+                <PersonalInfoForm
+                    personalInfo={personalInfo}
+                    setPersonalInfo={setPersonalInfo}
+                />
 
                 <div className="form-card">
                     <div className="education-form">
@@ -48,6 +32,5 @@ const Sidebar = () => {
 
     )
 }
-
 
 export default Sidebar;

@@ -8,16 +8,22 @@ import './App.css'
 
 function App() {
 
+  const [personalInfo, setPersonalInfo] = useState(initialData.personalInfo)
+
   return (
     <div className="app">
 
       <div >
-        <Sidebar />
+        <Sidebar
+          personalInfo={personalInfo}
+          setPersonalInfo={setPersonalInfo}
+
+        />
       </div>
       <div className="cvDisplay">
         <CVDisplay
           educations={initialData.sections.educations}
-          personalInfo={initialData.personalInfo}
+          personalInfo={personalInfo}
         />
 
       </div>
