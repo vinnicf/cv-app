@@ -35,7 +35,7 @@ const initialData = {
         experiences: [
             {
                 companyName: "Município de Gramado",
-                positionTitle: "Engenheiro Civil",
+                position: "Engenheiro Civil",
                 location: "Gramado, RS, Brazil",
                 description:
                     "Analyzed and Approved construction permits for buildings in the city. ",
@@ -47,7 +47,7 @@ const initialData = {
             },
             {
                 companyName: "Black Mesa Labs",
-                positionTitle: "UX Research Assistant",
+                position: "UX Research Assistant",
                 location: "Berlin, Germany",
                 description:
                     "Supported senior researchers on accessibility standards for the open web. Created and usability tested wireframes and prototypes. Produced interactive documentation for quick onboarding of new researchers.",

@@ -9,6 +9,7 @@ function App() {
 
   const [personalInfo, setPersonalInfo] = useState(initialData.personalInfo)
   const [educations, setEducations] = useState(initialData.sections.educations); // initial state of educations array
+  const [experiences, setExperiences] = useState(initialData.sections.experiences);
 
   const addEducation = (newEducation) => {
     const newEducationWithId = { ...newEducation, id: uniqid() }; // Add a unique ID to the new education
@@ -21,25 +22,38 @@ function App() {
     setEducations(newEducations);
   };
 
+  const addExperience = (newExperience) => {
+    const newExperienceWithId = { ...newExperience, id: uniqid() };
+    setExperiences([...experiences, newExperienceWithId]);
+  };
+
+  const updateExperience = (index, updatedExperience) => {
+    const newExperiences = [...experiences];
+    newExperiences[index] = updatedExperience;
+    setExperiences(newExperiences);
+  };
+
 
   return (
     <div className="app">
 
-      <div >
-        <Sidebar
-          personalInfo={personalInfo}
-          setPersonalInfo={setPersonalInfo}
-          addEducation={addEducation}
-          educations={educations}
-          updateEducation={updateEducation}
+      <Sidebar
+        personalInfo={personalInfo}
+        setPersonalInfo={setPersonalInfo}
+        addEducation={addEducation}
+        educations={educations}
+        updateEducation={updateEducation}
+        addExperience={addExperience}
+        updateExperience={updateExperience}
+        experiences={experiences}
 
-        />
-      </div>
+      />
+
       <div className="cvDisplay">
         <CVDisplay
           educations={educations}
           personalInfo={personalInfo}
-          experiences={initialData.sections.experiences}
+          experiences={experiences}
         />
 
       </div>

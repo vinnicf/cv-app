@@ -19,3 +19,12 @@
     padding: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+.input-group input,
+.input-group textarea {
+    background-color: aliceblue;
+    border: 2px solid transparent;
+    border-radius: 12px;
+    padding: 10px;
+    transition: border .25s, box-shadow .25s;
+}

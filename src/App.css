@@ -1,17 +1,22 @@
 #root {
-  max-width: 1280px;
+  max-width: 1500px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
 }
 
 .app {
-  display: flex;
+  display: grid;
   gap: 30px;
+  grid-template-columns: 1fr 2fr;
 
 }
 
 .header-text {
   background-color: antiquewhite;
   align-items: center;
+}
+
+.sidebar {
+  flex: 1 1 300px;
 }

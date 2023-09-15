@@ -18,7 +18,7 @@ const ExperienceSection = ({ experiences }) => {
                         </div>
                         <div className="experience-right">
                             <p><strong>{exp.companyName}</strong></p>
-                            <p>{exp.positionTitle}</p>
+                            <p>{exp.position}</p>
                             <p>{exp.description}</p>
                         </div>
                     </div>
