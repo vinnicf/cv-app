@@ -1,9 +1,10 @@
 import React from 'react';
 import '../styles/sidebar.css'
 import { PersonalInfoForm } from './PersonalInfoForm';
+import EducationForm from './EducationForm';
 
 
-const Sidebar = ({ personalInfo, setPersonalInfo }) => {
+const Sidebar = ({ personalInfo, setPersonalInfo, addEducation }) => {
 
     return (
         <div className='sidebar'>
@@ -14,13 +15,9 @@ const Sidebar = ({ personalInfo, setPersonalInfo }) => {
                     setPersonalInfo={setPersonalInfo}
                 />
 
-                <div className="form-card">
-                    <div className="education-form">
-                        <h3>Education</h3>
+                <EducationForm addEducation={addEducation} />
 
-                        <button>+ Add Education</button>
-                    </div>
-                </div>
+
                 <div className="form-card">
 
                     <h3>Experience</h3>
