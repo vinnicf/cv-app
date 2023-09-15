@@ -15,6 +15,12 @@ function App() {
     setEducations([...educations, newEducationWithId]);
   };
 
+  const updateEducation = (index, updatedEducation) => {
+    const newEducations = [...educations];
+    newEducations[index] = updatedEducation;
+    setEducations(newEducations);
+  };
+
 
   return (
     <div className="app">
@@ -24,6 +30,8 @@ function App() {
           personalInfo={personalInfo}
           setPersonalInfo={setPersonalInfo}
           addEducation={addEducation}
+          educations={educations}
+          updateEducation={updateEducation}
 
         />
       </div>

@@ -4,7 +4,7 @@ import { PersonalInfoForm } from './PersonalInfoForm';
 import EducationForm from './EducationForm';
 
 
-const Sidebar = ({ personalInfo, setPersonalInfo, addEducation }) => {
+const Sidebar = ({ personalInfo, setPersonalInfo, addEducation, updateEducation, educations }) => {
 
     return (
         <div className='sidebar'>
@@ -15,7 +15,11 @@ const Sidebar = ({ personalInfo, setPersonalInfo, addEducation }) => {
                     setPersonalInfo={setPersonalInfo}
                 />
 
-                <EducationForm addEducation={addEducation} />
+                <EducationForm
+                    addEducation={addEducation}
+                    educations={educations}
+                    updateEducation={updateEducation}
+                />
 
 
                 <div className="form-card">

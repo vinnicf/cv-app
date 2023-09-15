@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const EducationForm = ({ addEducation }) => {
+const EducationForm = ({ educations, addEducation, updateEducation }) => {
     const [showForm, setShowForm] = useState(false);
     const [newEducation, setNewEducation] = useState({
         degree: "",
@@ -9,6 +9,8 @@ const EducationForm = ({ addEducation }) => {
         startDate: "",
         endDate: "",
     });
+
+    const [editingIndex, setEditingIndex] = useState(null);
 
     const handleChange = (e) => {
         setNewEducation({
@@ -30,51 +32,110 @@ const EducationForm = ({ addEducation }) => {
         setShowForm(false);
     };
 
+    const handleCancel = () => {
+        setNewEducation({});
+        setShowForm(false);
+    };
+
+    const handleEditClick = (index) => {
+        setEditingIndex(index);
+        setNewEducation(educations[index]);
+        setShowForm(true);
+
+    }
+
+    const handleSaveEdit = () => {
+        updateEducation(editingIndex, newEducation);
+        handleCancel();
+    };
+
     return (
         <div className="form-card">
             <div className="education-form">
                 <h3>Education</h3>
-                <button onClick={() => setShowForm(!showForm)}>+ Add Education</button>
+
+
+                {educations.map((education, index) => (
+                    <div key={index} onClick={() => handleEditClick(index)}>
+                        {education.schoolName}
+                    </div>
+                ))}
+
+                {!showForm && (
+                    <button onClick={() => setShowForm(true)}>+ Add Education</button>
+                )}
 
                 {showForm && (
-                    <form onSubmit={handleSubmit}>
-                        <input
-                            type="text"
-                            name="degree"
-                            placeholder="Degree"
-                            value={newEducation.degree}
-                            onChange={handleChange}
-                        />
-                        <input
-                            type="text"
-                            name="schoolName"
-                            placeholder="School Name"
-                            value={newEducation.schoolName}
-                            onChange={handleChange}
-                        />
-                        <input
-                            type="text"
-                            name="location"
-                            placeholder="Location"
-                            value={newEducation.location}
-                            onChange={handleChange}
-                        />
-                        <input
-                            type="text"
-                            name="startDate"
-                            placeholder="Start Date"
-                            value={newEducation.startDate}
-                            onChange={handleChange}
-                        />
-                        <input
-                            type="text"
-                            name="endDate"
-                            placeholder="End Date"
-                            value={newEducation.endDate}
-                            onChange={handleChange}
-                        />
+                    <form >
+                        <div className="input-group">
+                            <label htmlFor="degree">Degree:</label>
+                            <input
+                                type="text"
+                                id="degree"
+                                name="degree"
+                                placeholder="Degree"
+                                value={newEducation.degree}
+                                onChange={handleChange}
+                            />
+                        </div>
+                        <div className="input-group">
+                            <label htmlFor="schoolName">School Name:</label>
+                            <input
+                                type="text"
+                                id="schoolName"
+                                name="schoolName"
+                                placeholder="School Name"
+                                value={newEducation.schoolName}
+                                onChange={handleChange}
+                            />
+                        </div>
+                        <div className="input-group">
+                            <label htmlFor="location">Location:</label>
+                            <input
+                                type="text"
+                                id="location"
+                                name="location"
+                                placeholder="Location"
+                                value={newEducation.location}
+                                onChange={handleChange}
+                            />
+                        </div>
+                        <div className="input-group">
+                            <label htmlFor="startDate">Start Date:</label>
+                            <input
+                                type="text"
+                                id="startDate"
+                                name="startDate"
+                                placeholder="Start Date"
+                                value={newEducation.startDate}
+                                onChange={handleChange}
+                            />
+                        </div>
+                        <div className="input-group">
+                            <label htmlFor="endDate">End Date:</label>
+                            <input
+                                type="text"
+                                id="endDate"
+                                name="endDate"
+                                placeholder="End Date"
+                                value={newEducation.endDate}
+                                onChange={handleChange}
+                            />
+                        </div>
 
-                        <input type="submit" value="Save" />
+                        {editingIndex !== null ? (
+                            <button type="button" onClick={handleSaveEdit}>
+                                Update
+                            </button>
+                        ) : (
+                            <button type="button" onClick={handleSubmit}>
+                                Save
+                            </button>
+                        )}
+
+                        <button type="button" onClick={handleCancel}>
+                            Cancel
+                        </button>
                     </form>
                 )}
             </div>
