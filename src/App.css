@@ -10,3 +10,8 @@
   gap: 30px;
 
 }
+
+.header-text {
+  background-color: antiquewhite;
+  align-items: center;
+}

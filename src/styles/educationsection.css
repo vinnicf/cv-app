@@ -1,0 +1,13 @@
+.education-item {
+
+    display: flex;
+    gap: 40px;
+}
+
+.education-section {
+    padding: 40px;
+}
+
+.edu-main {
+    text-align: left;
+}

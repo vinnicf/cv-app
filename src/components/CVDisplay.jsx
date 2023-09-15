@@ -2,8 +2,9 @@ import React from 'react';
 import '../styles/cvdisplay.css';
 import EducationSection from './EducationSection';
 import PersonalInfoSection from './PersonalInfoSection';
+import ExperienceSection from './ExperiencSection'
 
-function CVDisplay({ educations, personalInfo }) {
+function CVDisplay({ educations, personalInfo, experiences }) {
     return (
 
 
@@ -19,12 +20,11 @@ function CVDisplay({ educations, personalInfo }) {
             </div>
             <div className="cv-body">
                 <div className="cv-education">
-                    <h2>Education</h2>
+
                     <EducationSection educations={educations} />
                 </div>
                 <div className="cv-experience">
-                    <h2>Experience</h2>
-                    <p>Software Engineer at XYZ Corp</p>
+                    <ExperienceSection experiences={experiences} />
                 </div>
             </div>
         </div>

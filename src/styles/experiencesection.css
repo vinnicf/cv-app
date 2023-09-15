@@ -1,0 +1,17 @@
+.experience-section {
+    padding: 40px;
+}
+
+.experience-item {
+    display: flex;
+    gap: 20px;
+}
+
+.experience-left {
+    min-width: 150px;
+}
+
+.experience-right {
+    align-items: left;
+    text-align: left;
+}

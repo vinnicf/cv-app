@@ -24,6 +24,7 @@ function App() {
         <CVDisplay
           educations={initialData.sections.educations}
           personalInfo={personalInfo}
+          experiences={initialData.sections.experiences}
         />
 
       </div>
