@@ -45,6 +45,7 @@ const ExperienceForm = ({ experiences, addExperience, updateExperience }) => {
     const handleSaveEdit = () => {
         updateExperience(editingIndex, newExperience);
         handleCancel();
+        setEditingIndex(null);
     };
 
     return (
@@ -54,7 +55,7 @@ const ExperienceForm = ({ experiences, addExperience, updateExperience }) => {
 
 
                 {experiences.map((experience, index) => (
-                    <div key={index} onClick={() => handleEditClick(index)}>
+                    <div className="edubutton" key={index} onClick={() => handleEditClick(index)}>
                         {experience.companyName}
                     </div>
                 ))}

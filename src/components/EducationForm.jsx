@@ -47,6 +47,7 @@ const EducationForm = ({ educations, addEducation, updateEducation }) => {
     const handleSaveEdit = () => {
         updateEducation(editingIndex, newEducation);
         handleCancel();
+        setEditingIndex(null);
     };
 
     return (
@@ -56,7 +57,7 @@ const EducationForm = ({ educations, addEducation, updateEducation }) => {
 
 
                 {educations.map((education, index) => (
-                    <div key={index} onClick={() => handleEditClick(index)}>
+                    <div className="edubutton" key={index} onClick={() => handleEditClick(index)}>
                         {education.schoolName}
                     </div>
                 ))}

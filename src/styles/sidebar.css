@@ -28,3 +28,19 @@
     padding: 10px;
     transition: border .25s, box-shadow .25s;
 }
+
+.edubutton {
+    align-items: center;
+    background-color: #fff;
+    border: none;
+    border-top: 5px solid #f3f4f6;
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 14px 12px 24px;
+    cursor: pointer;
+
+}
+
+label {
+    text-align: left;
+}
