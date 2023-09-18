@@ -22,6 +22,12 @@ function App() {
     setEducations(newEducations);
   };
 
+  const deleteEducation = (index) => {
+    const newEducations = [...educations];
+    newEducations.splice(index, 1);
+    setEducations(newEducations);
+  };
+
   const addExperience = (newExperience) => {
     const newExperienceWithId = { ...newExperience, id: uniqid() };
     setExperiences([...experiences, newExperienceWithId]);
@@ -30,6 +36,12 @@ function App() {
   const updateExperience = (index, updatedExperience) => {
     const newExperiences = [...experiences];
     newExperiences[index] = updatedExperience;
+    setExperiences(newExperiences);
+  };
+
+  const deleteExperience = (index) => {
+    const newExperiences = [...experiences];
+    newExperiences.splice(index, 1);
     setExperiences(newExperiences);
   };
 
@@ -46,6 +58,8 @@ function App() {
         addExperience={addExperience}
         updateExperience={updateExperience}
         experiences={experiences}
+        deleteEducation={deleteEducation}
+        deleteExperience={deleteExperience}
 
       />
 

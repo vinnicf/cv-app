@@ -5,7 +5,7 @@ import EducationForm from './EducationForm';
 import ExperienceForm from './ExperienceForm';
 
 
-const Sidebar = ({ personalInfo, setPersonalInfo, addEducation, updateEducation, educations, experiences, updateExperience, addExperience }) => {
+const Sidebar = ({ personalInfo, setPersonalInfo, addEducation, updateEducation, educations, experiences, updateExperience, addExperience, deleteEducation, deleteExperience }) => {
 
     return (
         <div className='sidebar'>
@@ -20,6 +20,7 @@ const Sidebar = ({ personalInfo, setPersonalInfo, addEducation, updateEducation,
                     addEducation={addEducation}
                     educations={educations}
                     updateEducation={updateEducation}
+                    deleteEducation={deleteEducation}
                 />
 
 
@@ -27,6 +28,7 @@ const Sidebar = ({ personalInfo, setPersonalInfo, addEducation, updateEducation,
                     addExperience={addExperience}
                     experiences={experiences}
                     updateExperience={updateExperience}
+                    deleteExperience={deleteExperience}
                 />
 
             </div></div>

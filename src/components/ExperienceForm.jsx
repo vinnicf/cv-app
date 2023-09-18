@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const ExperienceForm = ({ experiences, addExperience, updateExperience }) => {
+const ExperienceForm = ({ experiences, addExperience, updateExperience, deleteExperience }) => {
     const [showForm, setShowForm] = useState(false);
     const [newExperience, setNewExperience] = useState({
         companyName: "",
@@ -57,6 +57,7 @@ const ExperienceForm = ({ experiences, addExperience, updateExperience }) => {
                 {experiences.map((experience, index) => (
                     <div className="edubutton" key={index} onClick={() => handleEditClick(index)}>
                         {experience.companyName}
+                        <button onClick={(e) => { e.stopPropagation(); deleteExperience(index); }}>X</button>
                     </div>
                 ))}
 
@@ -118,6 +119,17 @@ const ExperienceForm = ({ experiences, addExperience, updateExperience }) => {
                                 name="endDate"
                                 placeholder="End Date"
                                 value={newExperience.endDate}
+                                onChange={handleChange}
+                            />
+                        </div>
+                        <div className="input-group">
+                            <label htmlFor="description">Description:</label>
+                            <textarea
+                                type="text"
+                                id="description"
+                                name="description"
+                                placeholder="Description"
+                                value={newExperience.description}
                                 onChange={handleChange}
                             />
                         </div>

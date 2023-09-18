@@ -1,11 +1,17 @@
 .education-item {
 
     display: flex;
-    gap: 40px;
+    gap: 0px 40px;
+    padding-bottom: 20px;
 }
 
 .education-section {
     padding: 40px;
+}
+
+.edu-date {
+    min-width: 150px;
+    max-width: 151px;
 }
 
 .edu-main {

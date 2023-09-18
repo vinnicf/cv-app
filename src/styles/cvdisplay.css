@@ -12,3 +12,12 @@
     color: aliceblue;
 
 }
+
+.cv-body {
+    display: flex;
+    flex-direction: column;
+}
+
+.cv-body p {
+    margin: 0px;
+}

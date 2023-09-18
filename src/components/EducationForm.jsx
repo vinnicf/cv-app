@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const EducationForm = ({ educations, addEducation, updateEducation }) => {
+const EducationForm = ({ educations, addEducation, updateEducation, deleteEducation }) => {
     const [showForm, setShowForm] = useState(false);
     const [newEducation, setNewEducation] = useState({
         degree: "",
@@ -59,6 +59,9 @@ const EducationForm = ({ educations, addEducation, updateEducation }) => {
                 {educations.map((education, index) => (
                     <div className="edubutton" key={index} onClick={() => handleEditClick(index)}>
                         {education.schoolName}
+                        <button onClick={(e) => { e.stopPropagation(); deleteEducation(index); }}>X</button>
+
+
                     </div>
                 ))}
 
